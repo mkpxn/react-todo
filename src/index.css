@@ -9,6 +9,7 @@
 html, 
 body {
   height: 100%;
+  font-family: sans-serif;
 }
 body {
   line-height: 1.5;
@@ -36,6 +37,7 @@ h4,
 h5, 
 h6 {
   overflow-wrap: break-word;
+  margin: 0;
 }
 #root {
   isolation: isolate;

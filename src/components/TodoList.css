@@ -1,4 +1,15 @@
 .todo-list {
-    display: flex;
-    flex-wrap: wrap;
+    background-color: var(--color-base);
+    color: var(--color-text);
+}
+.header {
+    background-color: var(--color-grey);
+    padding: 1.5rem 2rem;
+}
+.todos {
+    display: grid;
+    list-style-type: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 1.5rem 2rem;
+    gap: 1rem;
 }

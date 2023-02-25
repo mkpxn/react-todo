@@ -10,17 +10,17 @@ const todos = [
 
 const TodoList = () => {
   return (
-    <section>
+    <section className='todo-list'>
       <header className='header'>
         <div className='header__inner'>
           <h1>To-Dos</h1>
         </div>
       </header>
-      <div className='todo-list'>
+      <ul className='todos'>
         <Todo description={todos[0].description} done={todos[0].done} />
         <Todo description={todos[1].description} done={todos[1].done} />
         <Todo description={todos[2].description} done={todos[2].done} />
-      </div>
+      </ul>
     </section>
   )
 }
