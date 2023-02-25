@@ -5,3 +5,15 @@
     border-radius: 0.375rem;
     background-color: var(--color-primary);
 }
+.todo button {
+    color: var(--color-text);
+    padding: 0.5rem 0.75rem;
+    border: 2px solid transparent;
+    cursor: pointer;
+    border-radius: 40em;
+    background: linear-gradient(var(--color-primary), var(--color-primary)) padding-box,
+                radial-gradient(circle, var(--color-accent-1) 25%, var(--color-accent-2) 50%, var(--color-accent-3) 75%, var(--color-accent-4) 100%) border-box; 
+}
+.todo button:hover {
+    background: var(--color-accent-2);
+}

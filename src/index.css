@@ -3,6 +3,9 @@
   --color-primary: #252526;
   --color-text: #fff;
   --color-accent-1: #ae278f;
+  --color-accent-2: #ec006c;
+  --color-accent-3: #ff0b39;
+  --color-accent-4: #ff4700;
 }
 *, 
 *::before, 
@@ -20,7 +23,7 @@ body {
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  background-color: var(--color-base);
+  background-color: #0F0F0F;
 }
 img, 
 picture, 
