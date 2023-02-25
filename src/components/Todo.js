@@ -3,9 +3,13 @@ import './Todo.css';
 
 const Todo = ({description, done}) => {
   return (
-    <li className='todo'>
+    <li className={
+      done 
+        ? 'todo done' 
+        : 'todo open'
+      }>
       <h2>{description}</h2>
-      <div>{done ? 'erledigt' : 'offen'}</div>
+      <button className='todo__button'>löschen</button>
     </li>
   )
 }

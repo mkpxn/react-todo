@@ -17,9 +17,9 @@ const TodoList = () => {
         </div>
       </header>
       <ul className='todos'>
-        <Todo description={todos[0].description} done={todos[0].done} />
-        <Todo description={todos[1].description} done={todos[1].done} />
-        <Todo description={todos[2].description} done={todos[2].done} />
+        {todos.map((item, index) => {
+          return <Todo description={item.description} done={item.done} key={index}/>
+        })}
       </ul>
     </section>
   )
