@@ -10,7 +10,7 @@ const todos = [
 
 const TodoList = () => {
   return (
-    <section className='todo-list'>
+    <section className='todo-section'>
       <header className='header'>
         <div className='header__inner'>
           <h1>To-Dos</h1>

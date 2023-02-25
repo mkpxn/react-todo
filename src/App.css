@@ -1,6 +1,4 @@
-:root {
-  --color-base: #0e0e0e;
-  --color-grey: #7b7575;
-  --color-text: #fff;
-  --color-accent-1: #ae278f;
+.app {
+  display: grid;
+  grid-template-columns: 1fr 80% 1fr;
 }

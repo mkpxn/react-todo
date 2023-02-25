@@ -1,10 +1,14 @@
-.todo-list {
+.todo-section {
     background-color: var(--color-base);
     color: var(--color-text);
+    grid-column: 2;
+    margin-top: 5rem;
 }
 .header {
-    background-color: var(--color-grey);
+    background-color: var(--color-primary);
     padding: 1.5rem 2rem;
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
 }
 .todos {
     display: grid;
