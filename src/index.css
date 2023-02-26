@@ -24,8 +24,29 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   background-color: #0e0e0e;
-  /* background: linear-gradient(120deg, rgba(30,30,30,1) 0%, rgba(37,37,38,1) 100%); */
-  /* background: linear-gradient(123deg, rgba(174,39,143,1) 0%, rgba(37,37,38,1) 100%); */
+
+}
+body:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(135deg, rgba(212,24,110,1) 0%, rgba(255,71,0,1) 100%);
+  border-radius: 50%;
+  top: 5%;
+  left: 25%;
+}
+body:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(135deg, rgba(212,24,110,1) 0%, rgba(174,39,143,1) 100%);
+  border-radius: 50%;
+  top: 60%;
+  right: 20%;
 }
 img, 
 picture, 
