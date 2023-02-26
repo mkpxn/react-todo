@@ -13,18 +13,9 @@
     cursor: pointer;
 }
 .todo:hover {
-    box-shadow: 0 4px 32px 0 rgba(174, 39, 143, 0.4);
+    /* box-shadow: 0 4px 32px 0 rgba(174, 39, 143, 0.4); */
+    background: rgba(0,0,0,0.6);
 }
-/* .todo button {
-    color: var(--color-text);
-    padding: 0.5rem 0.75rem;
-    border: 2px solid transparent;
-    cursor: pointer;
-    border-radius: 40em;
-    background: linear-gradient(var(--color-primary), var(--color-primary)) padding-box,
-                radial-gradient(circle, var(--color-accent-1) 25%, var(--color-accent-2) 50%, var(--color-accent-3) 75%, var(--color-accent-4) 100%) border-box; 
-}
-*/
 .todo__buttons {
     display: flex;
     align-items: center;

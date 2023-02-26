@@ -3,16 +3,26 @@ import { useState, useEffect } from 'react';
 import Todo from './Todo';
 import './TodoList.css';
 
-const allTodos = [
-  {description: 'Einkaufen', done: false},
-  {description: 'Sport', done: false},
-  {description: 'Programmieren', done: true},
-];
-
 const TodoList = () => {
 
   const [openCount, setCount] = useState(0);
-  const [todos, setTodos] = useState(allTodos);
+  const [todos, setTodos] = useState(() => {
+    const items = localStorage.getItem('items');
+    const parsed = JSON.parse(items);
+    return parsed || [];
+  });
+  const [textInput, setTextInput] = useState('');
+
+  const changeText = (e) => {
+    setTextInput(e.target.value);
+  }
+
+  const submit = (e) => {
+    e.preventDefault();
+    const newTodos = [...todos, {description: textInput, done: false}];
+    setTodos(newTodos);
+    setTextInput('');
+  }
 
   const changeTodo = (index) => {
     const newTodos = [...todos];
@@ -39,6 +49,7 @@ const TodoList = () => {
       setCount(doneTodos.length);
     };
     countOpen();
+    localStorage.setItem('items', JSON.stringify(todos));
   }, [todos]);
 
   return (
@@ -47,6 +58,14 @@ const TodoList = () => {
         <div className='header__inner'>
           <h1>Hallo!</h1>
           <p>Du hast noch <span className="header__opentodos">{openCount}</span> offene Todos</p>
+          <form className="header__form">
+            <input 
+              type="text" 
+              placeholder="neues Todo..." 
+              onChange={changeText} 
+              value={textInput}></input>
+            <input type="submit" value="erstellen" onClick={submit}></input>
+          </form>
         </div>
       </header>
       <ul className='todos'>
