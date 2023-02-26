@@ -24,6 +24,13 @@ const TodoList = () => {
     setTodos(newTodos);
   }
 
+  const deleteTodo = (e, index) => {
+    e.stopPropagation();
+    const newTodos = [...todos];
+    newTodos.splice(index, 1);
+    setTodos(newTodos);
+  }
+
   useEffect(() => {
     const countOpen = () => {
       const doneTodos = todos.filter((item) => {
@@ -44,7 +51,7 @@ const TodoList = () => {
       </header>
       <ul className='todos'>
         {todos.map((item, index) => {
-          return <Todo description={item.description} done={item.done} key={index} index={index} onChangeTodo={changeTodo} />
+          return <Todo description={item.description} done={item.done} key={index} index={index} onChangeTodo={changeTodo} onDeleteTodo={deleteTodo} />
         })}
       </ul>
     </section>
