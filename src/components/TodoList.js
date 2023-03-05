@@ -5,24 +5,33 @@ import './TodoList.css';
 
 const TodoList = () => {
 
+  // set the useStates
+
+  /* regular useState */
   const [openCount, setCount] = useState(0);
+  const [textInput, setTextInput] = useState('');
+
+  /* useState which sets initial value based upon function */
   const [todos, setTodos] = useState(() => {
     const items = localStorage.getItem('items');
     const parsed = JSON.parse(items);
     return parsed || [];
   });
-  const [textInput, setTextInput] = useState('');
 
-  const changeText = (e) => {
-    setTextInput(e.target.value);
-  }
+  // useEffect to re-count open todos and save them into localStorage
+  useEffect(() => {
+    const countOpen = () => {
+      const doneTodos = todos.filter((item) => {
+        return !item.done;
+      });
+      setCount(doneTodos.length);
+    };
+    countOpen();
+    localStorage.setItem('items', JSON.stringify(todos));
+  }, [todos]);
 
-  const submit = (e) => {
-    e.preventDefault();
-    const newTodos = [...todos, {description: textInput, done: false}];
-    setTodos(newTodos);
-    setTextInput('');
-  }
+  
+  // functions to update/delete todos
 
   const changeTodo = (index) => {
     const newTodos = [...todos];
@@ -41,17 +50,22 @@ const TodoList = () => {
     setTodos(newTodos);
   }
 
-  useEffect(() => {
-    const countOpen = () => {
-      const doneTodos = todos.filter((item) => {
-        return !item.done;
-      });
-      setCount(doneTodos.length);
-    };
-    countOpen();
-    localStorage.setItem('items', JSON.stringify(todos));
-  }, [todos]);
 
+  // helper functions
+
+  const changeText = (e) => {
+    setTextInput(e.target.value);
+  }
+
+  const submit = (e) => {
+    e.preventDefault();
+    const newTodos = [...todos, {description: textInput, done: false}];
+    setTodos(newTodos);
+    setTextInput('');
+  }
+
+  // output
+  
   return (
     <section className='todo-list'>
       <header className='header'>
